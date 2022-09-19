@@ -1,3 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/js/dist/carousel';
+import 'bootstrap/js/dist/collapse'
+import 'bootstrap/js/dist/button'
+import 'bootstrap/js/dist/dropdown'
+import 'bootstrap/dist/js/bootstrap.bundle'
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

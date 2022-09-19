@@ -1,0 +1,29 @@
+.movie-poster{
+    width: 100%;
+    border-radius: 5px;
+}
+.tagline, .overview{
+    color:#6c757d;
+}
+.genre-block{
+    padding: 5px 8px;
+    background-color: darkcyan;
+    border-radius: 10px;
+}
+.cast-member{
+    width: 140px;
+}
+.cast-member-img{
+    width: 100%;
+    transform: translateY(-10%);
+}
+.cast-member-img-crop{
+    position: relative;
+    height: 140px;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.cast-member-name{
+    text-align: center;
+}

@@ -1,0 +1,11 @@
+.row-info{
+    color: #6c757d;
+}
+.row-heading h2{
+    width: 50%;
+}
+.dark-bottom{
+    z-index: 10;
+    height: 100%;
+    box-shadow: inset -20px 20px #000;
+}
