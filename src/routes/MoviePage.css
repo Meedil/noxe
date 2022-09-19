@@ -27,3 +27,7 @@
 .cast-member-name{
     text-align: center;
 }
+.yt-vid{
+    width: 100%;
+    max-width: 1600px;
+}

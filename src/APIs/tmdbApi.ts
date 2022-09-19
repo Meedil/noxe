@@ -2,7 +2,7 @@ export const myKey = '63a755e9923c3c8f411ddebe7892197b';
 
 export function getTrendingMovies(timeFrame:'week'|'day'='week'){
     return  fetch(
-        `https://api.themoviedb.org/3/trending/movie/week?api_key=${myKey}&append_to_response=credits,videos`, {method: 'GET'})
+        `https://api.themoviedb.org/3/trending/movie/week?api_key=${myKey}`, {method: 'GET'})
 }
 
 export function getImageURL(imagePath:string,widthString:string='original'){
@@ -10,7 +10,7 @@ export function getImageURL(imagePath:string,widthString:string='original'){
 }
 
 export function getDetials(type:'movie'|'tv', id:number){
-    return fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${myKey}&language=en-US`)
+    return fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${myKey}&language=en-US&append_to_response=credits,videos`)
 }
 
 export function getDiscover(type:'movie'|'tv', page:number=1){
