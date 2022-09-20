@@ -15,7 +15,7 @@ export default function DiscoverPage(){
     
     const content = contentData.results.map((movieDetails) => {
         return(
-            <div className="col-lg-2 col-md-3 col-4">
+            <div key={movieDetails.id} className="col-lg-2 col-md-3 col-4">
                 <MovieCard movieId={movieDetails.id} moviePosterPath={movieDetails.poster_path} movieRating={movieDetails.vote_average} movieTitle={movieDetails.title !== undefined ? movieDetails.title : movieDetails.name} type={type}/>
             </div>)
     })

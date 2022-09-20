@@ -1,12 +1,13 @@
 
 import { CaretLeftFill, CaretRightFill } from "react-bootstrap-icons";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { json, Link, useLoaderData, useParams } from "react-router-dom";
 import { getSearchResults } from "../APIs/tmdbApi"
 import MovieCard from "../Components/MovieCard";
 
 export async function loader({params}){
+
     const contentData = getSearchResults(params.searchText, params.pageNum);
-    // console.log('response: ', {...contentData})
+    
     return contentData;
 }
 
@@ -14,8 +15,6 @@ export default function SearchResults(){
     const contentData:any = useLoaderData();
     let {searchText, pageNum} = useParams();
     
-    // console.log('stuffff', contentData)
-    localStorage.setItem('searchcontent',JSON.stringify(contentData))
 
     const disablePrev = parseInt(pageNum) === 1;
     const disableNext = parseInt(pageNum) === contentData.total_pages;
@@ -36,7 +35,7 @@ export default function SearchResults(){
                 <div className={'d-inline-block ' + (disablePrev?'disabled':'')}>
                     <Link to={!disablePrev ? `/searchResults/${searchText}/${parseInt(pageNum)-1}` : ''} className={"prev-pageNum d-inline-block"}><CaretLeftFill color={disablePrev?'#6c757d':'white'}/></Link>
                 </div>
-                pageNum <span className="subtext">{pageNum}</span> / <Link to={`/searchResults/${searchText}/${contentData.total_pages}`}> {contentData.total_pages}</Link>
+                Page <span className="subtext">{pageNum}</span> / <Link to={`/searchResults/${searchText}/${contentData.total_pages}`}> {contentData.total_pages}</Link>
                 <Link to={!disableNext ? `/searchResults/${searchText}/${parseInt(pageNum)+1}` : ''} className="prev-pageNum d-inline-block"><CaretRightFill color={disableNext?'#6c757d':'white'}/></Link>
             </span></div>
             <div className="row"></div>

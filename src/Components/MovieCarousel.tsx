@@ -5,6 +5,7 @@ export default function MovieCarousel({moviesTrendingTodayResponse}){
     const [movieSlides, setMovieSlides] = useState();
 
     useEffect(() => {
+        console.log('movies trending today: ', moviesTrendingTodayResponse)
         moviesTrendingTodayResponse.then(response => response.json()).then(movies => {
             console.log('response: ', movies);
             

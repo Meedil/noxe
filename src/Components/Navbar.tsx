@@ -28,7 +28,7 @@ export default function Navbar({on}:any){
                         <Link to={'/discover/tv/1'} className="nav-link">TV-Shows</Link>
                     </li>
                 </ul>
-                <form className="d-flex" role="search" onSubmit={() => {if(searchText.trim().length>0) {navigate(`/searchResults/${encodeURI(searchText)}/1`);}}}>
+                <form className="d-flex" role="search" onSubmit={(e) => {e.preventDefault(); if(searchText.trim().length>0) {navigate(`/searchResults/${encodeURI(searchText)}/1`);}}}>
                     <input className="form-control me-2" value={searchText} onChange={e => setSearchText(e.target.value)} type="search" placeholder="Search" aria-label="Search"/>
                     <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>

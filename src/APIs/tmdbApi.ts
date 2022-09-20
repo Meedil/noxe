@@ -14,7 +14,7 @@ export function getDetials(type:'movie'|'tv', id:number){
 }
 
 export function getDiscover(type:'movie'|'tv', page:number=1){
-    return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${myKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`);
+    return fetch(`https://api.themoviedb.org/3/discover/${type}?api_key=${myKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`);
 }
 
 export function getCredits(type:'movie'|'tv', id:number){

@@ -6,6 +6,7 @@ import { ReactElement, useEffect, useState } from "react"
 import MovieCard from "../Components/MovieCard"
 import MovieCarousel from "../Components/MovieCarousel"
 import axios from "axios"
+import { from } from "rxjs"
 
 export async function loader() {
     const moviesTrendingToday = fetch(
@@ -15,7 +16,6 @@ export async function loader() {
     const showsTrendingThisWeek = fetch(
         `http://api.themoviedb.org/3/trending/tv/week?api_key=${myKey}&language=en-US`, {method: 'GET'});
 
-    axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${myKey}`).then((response) => console.log(response))
     return {watchNowMovies: moviesTrendingThisWeek, watchNowShows: showsTrendingThisWeek, moviesTrendingToday}
 }
 
