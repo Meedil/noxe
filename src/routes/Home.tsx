@@ -1,4 +1,3 @@
-import { isTokenValid } from "../APIs/userApi"
 import "./Home.css"
 import { redirect, useLoaderData } from "react-router-dom"
 import { myKey } from "../APIs/tmdbApi"
@@ -23,7 +22,6 @@ export default function Home(){
     const {watchNowMovies: moviesResponseWeek, watchNowShows: showsResponse, moviesTrendingToday: moviesResponseDay}:any = useLoaderData();
     const [movieCards, setMovieCards] = useState<any[]>();
     const [showCards, setShowCards] = useState<any[]>();
-
 
     useEffect(()=>{
         moviesResponseWeek.then(response=>
