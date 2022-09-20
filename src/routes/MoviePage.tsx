@@ -5,7 +5,7 @@ import './MoviePage.css'
 
 export async function loader({params}){
     const details = getDetials(params.type, params.id);
-    console.log(details)
+    // console.log(details)
     return details;
 }
 
@@ -17,7 +17,7 @@ export default function MoviePage (){
         return <div key={genreId} className="d-inline-block me-1 mb-1 genre-block">{genreName}</div>
     });
     
-    console.log(pageData)
+    // console.log(pageData)
     const cast = credits.cast.filter((member, index) => index < 4).map((member)=>{
         return (
             <div className="cast-member">
@@ -31,19 +31,19 @@ export default function MoviePage (){
     return(
         <div className="container">
             <div className="row">
-                <div className="col-4"><img className="movie-poster" src={/*pageData &&*/getImageURL(pageData.poster_path)} alt=""/></div>
+                <div className="col-4"><img className="movie-poster" src={getImageURL(pageData.poster_path,  'original')} alt=""/></div>
                 <div className="col">
                     <h1 className="title">{pageData.title ? pageData.title : pageData.name}</h1>
-                    <div className="tagline mb-3 fs-4">{/*pageData &&*/pageData.tagline}</div>
-                    <div className="genres">{/*pageData &&*/genres}</div>
+                    <div className="tagline mb-3 fs-4 subtext">{pageData.tagline}</div>
+                    <div className="genres">{genres}</div>
                     <div className="my-2">
-                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">Release Date: {/*pageData &&*/pageData.release_date}</div>
-                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">Runtime: {/*pageData &&*/pageData.runtime} mins</div>
-                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">vote count: {/*pageData &&*/pageData.vote_count}</div>
-                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">vote average: {/*pageData &&*/pageData.vote_average}</div>
-                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">popularity: {/*pageData &&*/pageData.popularity}</div>
+                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">Release Date: {pageData.release_date}</div>
+                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">Runtime: {pageData.runtime} mins</div>
+                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">vote count: {pageData.vote_count}</div>
+                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">vote average: {pageData.vote_average}</div>
+                        <div className="fact-fields d-inline-block bg-dark py-1 px-2 mb-1 me-1">popularity: {pageData.popularity}</div>
                     </div>  
-                    <p className="overview">{/*pageData &&*/pageData.overview}</p>
+                    <p className="overview subtext">{pageData.overview}</p>
                     <div className="d-flex justify-content-around flex-wrap actors-container">{                    cast}</div>
                 </div>
             </div>

@@ -5,14 +5,17 @@ import { myKey } from "../APIs/tmdbApi"
 import { ReactElement, useEffect, useState } from "react"
 import MovieCard from "../Components/MovieCard"
 import MovieCarousel from "../Components/MovieCarousel"
+import axios from "axios"
 
 export async function loader() {
     const moviesTrendingToday = fetch(
-        `https://api.themoviedb.org/3/trending/movie/week?api_key=${myKey}`, {method: 'GET'});
+        `https://api.themoviedb.org/3/trending/movie/day?api_key=${myKey}`, {method: 'GET'});
     const moviesTrendingThisWeek = fetch(
         `https://api.themoviedb.org/3/trending/movie/week?api_key=${myKey}`, {method: 'GET'});
     const showsTrendingThisWeek = fetch(
         `http://api.themoviedb.org/3/trending/tv/week?api_key=${myKey}&language=en-US`, {method: 'GET'});
+
+    axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${myKey}`).then((response) => console.log(response))
     return {watchNowMovies: moviesTrendingThisWeek, watchNowShows: showsTrendingThisWeek, moviesTrendingToday}
 }
 
@@ -27,7 +30,7 @@ export default function Home(){
             response.json()
             ).then((shows:any) => {
                 setMovieCards(shows.results.filter((movieDetails, index) => index < 10).map((movieDetails, index)=>{
-                    console.log(movieDetails)
+                    // console.log(movieDetails)
                     return <div className={"col-4 col-md-3 col-lg-2 "} key={movieDetails.id}>
                     <MovieCard movieId={movieDetails.id} moviePosterPath={movieDetails.poster_path} movieTitle={movieDetails.title} movieRating={movieDetails.vote_average} type="movie"/>
                 </div>
@@ -57,7 +60,7 @@ export default function Home(){
                         <hr className="w-25"/>
                         <div className="row-heading">
                             <h2 >Trending Movies to Watch Now</h2>
-                            <div className="display-6 fs-6 row-info">Most watched movies last 2 weeks</div>
+                            <div className="display-6 fs-6 row-info subtext">Most watched movies last 2 weeks</div>
                         </div>
                         <hr />
                     </div>

@@ -2,9 +2,7 @@
     width: 100%;
     border-radius: 5px;
 }
-.tagline, .overview{
-    color:#6c757d;
-}
+
 .genre-block{
     padding: 5px 8px;
     background-color: darkcyan;

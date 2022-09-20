@@ -1,12 +1,13 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import Navbar from './Components/Navbar';
-import DiscoverPage, { loader as dicoverLoader } from './routes/DiscoverPage';
-import Home, {loader as homeLoader} from './routes/Home';
-import Login from './routes/Login';
-import MoviePage, { loader as moviePageLoader } from './routes/MoviePage';
-import Root, { loader as rootLoader } from './routes/Root';
+
+import DiscoverPage, { loader as dicoverLoader } from './Routes/DiscoverPage';
+import Home, {loader as homeLoader} from './Routes/Home';
+import Login from './Routes/Login';
+import MoviePage, { loader as moviePageLoader } from './Routes/MoviePage';
+import Root from './Routes/Root';
+import SearchResults, { loader as searchLoader } from './Routes/SearchResults';
 
 
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([{
       path: 'discover/:type/:page',
       element: <DiscoverPage />,
       loader: dicoverLoader
+   },{
+      path: 'searchResults/:searchText/:pageNum',
+      element: <SearchResults />,
+      loader: searchLoader
    }],
   }]
 )

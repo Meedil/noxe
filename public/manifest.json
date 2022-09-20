@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Noxe",
+  "name": "Noxe - using TMDB API",
   "icons": [
     {
       "src": "favicon.ico",

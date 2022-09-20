@@ -5,13 +5,13 @@ export default function MovieCarousel({moviesTrendingTodayResponse}){
     const [movieSlides, setMovieSlides] = useState();
 
     useEffect(() => {
-        moviesTrendingTodayResponse.then(
-            response => response.json()
-        ).then(movies => {
+        moviesTrendingTodayResponse.then(response => response.json()).then(movies => {
+            console.log('response: ', movies);
+            
             setMovieSlides(movies.results.map((movieDetails, index) => {
                 return (
-                <div className={"carousel-item " + (index === 0 ? "active" : "")}>
-                    <img src={getImageURL(movieDetails.backdrop_path)} className={"d-block w-100 dark-bottom"} alt="..."/>
+                <div key={movieDetails.id} className={"carousel-item " + (index === 0 ? "active" : "")}>
+                    <img src={getImageURL(movieDetails.backdrop_path, 'original')} className={"d-block w-100 dark-bottom"} alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
                         <h5>{movieDetails.title}</h5>
                     </div>

@@ -11,3 +11,14 @@
 .nav-item{
     font-size: 16px;
 }
+.subtext{
+    color: #6c757d;
+}
+.disabled{
+    cursor:no-drop;
+    pointer-events: none;
+    color: #6c757d;
+}
+a{
+    color: white;
+}

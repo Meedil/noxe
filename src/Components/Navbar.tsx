@@ -1,8 +1,11 @@
 import './Navbar.css'
-import { Link, } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
+import { useState } from 'react';
 
 export default function Navbar({on}:any){
     on ??= true;
+    const navigate = useNavigate();
+    const [searchText, setSearchText] = useState('');
 
     return (
     <nav className="navbar navbar-expand-lg navbar-dark mb-5">
@@ -25,8 +28,8 @@ export default function Navbar({on}:any){
                         <Link to={'/discover/tv/1'} className="nav-link">TV-Shows</Link>
                     </li>
                 </ul>
-                <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <form className="d-flex" role="search" onSubmit={() => {if(searchText.trim().length>0) {navigate(`/searchResults/${encodeURI(searchText)}/1`);}}}>
+                    <input className="form-control me-2" value={searchText} onChange={e => setSearchText(e.target.value)} type="search" placeholder="Search" aria-label="Search"/>
                     <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>}
