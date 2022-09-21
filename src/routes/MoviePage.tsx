@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getDetials, getImageURL } from "../APIs/tmdbApi"
 import './MoviePage.css'
 
 export async function loader({params}){
     const details = getDetials(params.type, params.id);
-    // console.log(details)
     return details;
 }
 
@@ -17,7 +15,6 @@ export default function MoviePage (){
         return <div key={genreId} className="d-inline-block me-1 mb-1 genre-block">{genreName}</div>
     });
     
-    // console.log(pageData)
     const cast = credits.cast.filter((member, index) => index < 4).map((member)=>{
         return (
             <div className="cast-member">

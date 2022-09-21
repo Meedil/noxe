@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useLocation, useParams, useResolvedPath } from "react-router-dom"
+import { Link, useLoaderData, useParams } from "react-router-dom"
 import { getDiscover } from "../APIs/tmdbApi"
 import MovieCard from "../Components/MovieCard";
 import { CaretRightFill, CaretLeftFill } from "react-bootstrap-icons";
@@ -10,8 +10,6 @@ export async function loader({params}){
 export default function DiscoverPage(){
     const contentData:any = useLoaderData();
     const {type, page} = useParams();
-    const location = useLocation();
-    // console.log(location)
     
     const content = contentData.results.map((movieDetails) => {
         return(

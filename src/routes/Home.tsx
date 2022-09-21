@@ -1,11 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./Home.css"
-import { redirect, useLoaderData } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
 import { myKey } from "../APIs/tmdbApi"
-import { ReactElement, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import MovieCard from "../Components/MovieCard"
 import MovieCarousel from "../Components/MovieCarousel"
-import axios from "axios"
-import { from } from "rxjs"
 
 export async function loader() {
     const moviesTrendingToday = fetch(
@@ -28,7 +27,6 @@ export default function Home(){
             response.json()
             ).then((shows:any) => {
                 setMovieCards(shows.results.filter((movieDetails, index) => index < 10).map((movieDetails, index)=>{
-                    // console.log(movieDetails)
                     return <div className={"col-4 col-md-3 col-lg-2 "} key={movieDetails.id}>
                     <MovieCard movieId={movieDetails.id} moviePosterPath={movieDetails.poster_path} movieTitle={movieDetails.title} movieRating={movieDetails.vote_average} type="movie"/>
                 </div>

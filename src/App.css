@@ -13,7 +13,7 @@
     font-size: 16px;
 }
 .subtext{
-    color: var(--text-grey);
+    color: var(--text-grey) !important;
 }
 .disabled{
     cursor:no-drop;
