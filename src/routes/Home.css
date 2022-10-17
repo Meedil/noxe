@@ -2,8 +2,23 @@
     width: 50%;
 }
 
-.carousel-img-container::after{
-    z-index: 200;
-    height: 100% !important;
-    box-shadow: inset 20px 20px black;
+.carousel-caption{
+    display: block !important;;
+}
+
+.carousel-caption h5{
+    font-size: calc(3vw);
+}
+
+.carousel-inner{
+    width: 75%;
+}
+@media screen and (max-width: 768px) {
+    .carousel-inner{
+        width: 100%
+    }
+}
+
+.dark-bottom{
+    box-shadow: 0 -70px 100px 10px black inset;
 }

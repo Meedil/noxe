@@ -28,7 +28,7 @@ export default function MoviePage (){
     return(
         <div className="container">
             <div className="row">
-                <div className="col-4"><img className="movie-poster" src={getImageURL(pageData.poster_path,  'original')} alt=""/></div>
+                <div className="col-sm-4"><img className="movie-poster" src={getImageURL(pageData.poster_path,  'original')} alt=""/></div>
                 <div className="col">
                     <h1 className="title">{pageData.title ? pageData.title : pageData.name}</h1>
                     <div className="tagline mb-3 fs-4 subtext">{pageData.tagline}</div>

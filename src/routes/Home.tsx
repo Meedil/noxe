@@ -66,8 +66,8 @@ export default function Home(){
                     <div className="col-md-3 col-lg-4">
                         <hr className="w-25"/>
                         <div className="row-heading">
-                            <h2 >Trending Movies to Watch Now</h2>
-                            <div className="display-6 fs-6 row-info">Most watched movies last 2 weeks</div>
+                            <h2 >Trending Tv Shows to Watch Now</h2>
+                            <div className="display-6 fs-6 row-info">Most watched Tv Shows last 2 weeks</div>
                         </div>
                         <hr />
                     </div>

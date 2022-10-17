@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Navbar from "../Components/Navbar";
 import { Outlet, redirect, useNavigate, useLocation, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -26,6 +27,12 @@ export default function Root(){
             navigate('home');
         }
     }, [])
+
+    useEffect(() => {
+        if(currentUser){
+            navigate('home');
+        }
+    }, [currentUser])
 
     return(
     <div>

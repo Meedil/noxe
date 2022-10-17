@@ -72,7 +72,7 @@ export default function Register(){
                 <div className="col-10 col-md-8 offset-1 offset-md-2 text-bg-danger bg-opacity-25 subtext fw-bold rounded py-2 ">{message}</div>
             </div>
             }
-            <div className="row mt-3"><button ref={registerBtn} className='btn bg-light btn-light col-4 col-md-2 offset-4 offset-md-5 login-msg' type="submit">Register</button></div>
+            <div className="row mt-3"><button ref={registerBtn} className='btn bg-light btn-light col-4 col-md-2 offset-4 offset-md-5' type="submit">Register</button></div>
         </form>
     )
 }

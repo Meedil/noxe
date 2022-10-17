@@ -23,7 +23,7 @@ export default function DiscoverPage(){
 
     return(
         <div className="container">
-            <div className="fs-4 mb-3">Discover Movies 
+            <div className="fs-4 mb-3">Discover {type === 'movie' ? 'Movies' : 'Tv Shows'} 
             <span className="float-end">
                 <div className={'d-inline-block ' + (disablePrev?'disabled':'')}>
                     <Link to={!disablePrev ? `/discover/${type}/${parseInt(page)-1}` : ''} className={"prev-page d-inline-block"}><CaretLeftFill color={disablePrev?'#6c757d':'white'}/></Link>
