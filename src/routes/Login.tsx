@@ -33,7 +33,7 @@ export default function Login(){
             <div className="row justify-content-center mt-5 mb-2">
                 <div className="col-10 col-md-8">
                     <label htmlFor="username-input">E-mail </label>
-                    <input className='form-control' value={email} onChange={e => setEmail(e.target.value)} id="username-input" placeholder="username" type="text" />
+                    <input className='form-control' value={email} onChange={e => setEmail(e.target.value)} id="username-input" placeholder="address@domain.com" type="text" />
                 </div>
             </div>
             <div className="row justify-content-center mb-4">
