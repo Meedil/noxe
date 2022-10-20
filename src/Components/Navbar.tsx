@@ -31,11 +31,13 @@ export default function Navbar(){
                     </li>
                 </ul>
                 <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success" type="submit">Search</button>
+                    <input className="form-control me-1" type="search" placeholder="Search" aria-label="Search"/>
+                    <button className="btn btn-outline-success me-3" type="submit">Search</button>
                 </form>
-                <div className="nav-item">
-                    <Link className='nav-link me-3 logout-link' to="/login" onClick={logout}>Logout</Link>
+                <div className="navbar-nav">
+                    <div className={"nav-item"}>
+                        <Link className='nav-link logout-link' to="/login" onClick={logout}>Logout</Link>
+                    </div>
                 </div>
                 </div>
                 </>}

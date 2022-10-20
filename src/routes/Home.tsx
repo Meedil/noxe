@@ -12,7 +12,7 @@ export async function loader() {
     const moviesTrendingThisWeek = fetch(
         `https://api.themoviedb.org/3/trending/movie/week?api_key=${myKey}`, {method: 'GET'});
     const showsTrendingThisWeek = fetch(
-        `http://api.themoviedb.org/3/trending/tv/week?api_key=${myKey}&language=en-US`, {method: 'GET'});
+        `https://api.themoviedb.org/3/trending/tv/week?api_key=${myKey}&language=en-US`, {method: 'GET'});
 
     return {watchNowMovies: moviesTrendingThisWeek, watchNowShows: showsTrendingThisWeek, moviesTrendingToday}
 }

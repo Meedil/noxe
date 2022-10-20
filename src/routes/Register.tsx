@@ -1,6 +1,6 @@
 import jwtDecode from "jwt-decode";
 import { useContext, useRef, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { signIn, signUp } from "../APIs/userApi";
 import { CurrentUserContext } from "../App";
 
@@ -69,10 +69,11 @@ export default function Register(){
             </div>
             {message && 
             <div className="div row">
-                <div className="col-10 col-md-8 offset-1 offset-md-2 text-bg-danger bg-opacity-25 subtext fw-bold rounded py-2 ">{message}</div>
+                <div className="col-10 col-md-8 offset-1 offset-md-2 text-bg-danger bg-opacity-25 subtext fw-bold rounded py-2">{message}</div>
             </div>
             }
             <div className="row mt-3"><button ref={registerBtn} className='btn bg-light btn-light col-4 col-md-2 offset-4 offset-md-5' type="submit">Register</button></div>
+            <div className="row justify-content-center"><div className="col-4 col-md-2 text-center mt-3">Already have an account? <Link className='fw-bold' to={'/login'}>Login</Link></div></div>
         </form>
     )
 }
