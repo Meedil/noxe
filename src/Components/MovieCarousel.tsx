@@ -27,7 +27,7 @@ export default function MovieCarousel({moviesTrendingTodayResponse}){
     
 
     return(
-        <div id="carouselExampleCaptions" className="carousel slide mb-5" data-bs-ride="false">
+        <div id="carouselExampleCaptions" className="carousel slide mb-md-5" data-bs-ride="false">
             <div className="carousel-inner w-sm-75 mx-auto">
                 {movieSlides}
             </div>

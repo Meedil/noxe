@@ -47,7 +47,7 @@ export default function Home(){
 
     return (
         <div>
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
                     <MovieCarousel moviesTrendingTodayResponse={moviesResponseDay}/>
                 </div>

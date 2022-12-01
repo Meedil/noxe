@@ -7,7 +7,7 @@
 }
 
 .carousel-caption h5{
-    font-size: calc(3vw);
+    font-size: clamp(16px,3.5vw,40px);
 }
 
 .carousel-inner{
@@ -16,6 +16,9 @@
 @media screen and (max-width: 768px) {
     .carousel-inner{
         width: 100%
+    }
+    .carousel-caption{
+        /* padding: 5px; */
     }
 }
 

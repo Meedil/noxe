@@ -1,4 +1,3 @@
-import jwtDecode from 'jwt-decode';
 import 'jquery/dist/jquery'
 import React, { createContext, useEffect, useState } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider, useNavigate } from 'react-router-dom';

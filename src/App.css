@@ -6,9 +6,9 @@
     font-weight: 300;
     --text-grey:#6c757d;
 }
-.row{
+/* .row{
     max-width: 100%;
-}
+} */
 .nav-item{
     font-size: 16px;
 }
@@ -22,4 +22,9 @@
 }
 a{
     color: white;
+}
+.login-message{
+    text-align: center; 
+    font-family: Roboto, 'arial';
+    color: #dadada !important;
 }
