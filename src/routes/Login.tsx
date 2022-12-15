@@ -27,9 +27,9 @@ export default function Login(){
         else {setMessage(message);}
     }
 
-    // const goToHome = () => {
-    //     setCurrentUser()
-    // }
+    const goToHome = () => {
+        setCurrentUser("token?");
+    }
 
     return(
         <form onSubmit={e => {login(e); }} className="container pt-5">
@@ -50,9 +50,9 @@ export default function Login(){
                 <div className="col-10 col-md-8 text-bg-danger bg-opacity-25 subtext fw-bold rounded py-2 mb-3">{message}</div>
             </div>
             }
-            {/* <div className="div row justify-content-center">
+            <div className="div row justify-content-center">
                 <div className="col-10 col-md-8 text-bg-danger bg-opacity-25 login-message rounded py-2 mb-3">Unfortunately this login-page no longer works, due to access changes in the backend<br/><button className='btn text-light fw-bold mt-2' onClick={goToHome}>Click here to proceed</button></div>
-            </div> */}
+            </div>
             <div className="row justify-content-center"><button className='btn bg-light btn-light col-4 col-md-2' type="submit">Login</button></div>
             <div className="row justify-content-center"><div className="col-8 col-md-4 text-center mt-3">Don't have an account? <Link className='fw-bold' to={'/register'}>Register</Link></div></div>
         </form>
