@@ -1,25 +1,22 @@
 
 import { CaretLeftFill, CaretRightFill } from "react-bootstrap-icons";
-import { json, Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { getSearchResults } from "../APIs/tmdbApi"
 import MovieCard from "../Components/MovieCard";
 
 export async function loader({params}){
-
     const contentData = getSearchResults(params.searchText, params.pageNum);
-    
     return contentData;
 }
 
 export default function SearchResults(){
     const contentData:any = useLoaderData();
     let {searchText, pageNum} = useParams();
-    
 
     const disablePrev = parseInt(pageNum) === 1;
-    const disableNext = parseInt(pageNum) === contentData.total_pages;
+    const disableNext = parseInt(pageNum) >= contentData.total_pages;
 
-
+    console.log(contentData.results);
     const content = contentData.results.filter((item) => item.gender === undefined).map((movieDetails) => {
         const type = movieDetails.title === undefined ? 'tv' : 'movie';
         return(

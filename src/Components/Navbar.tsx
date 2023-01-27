@@ -8,7 +8,7 @@ export default function Navbar(){
     const {currentUser, logout} = useContext(CurrentUserContext);
     const on = currentUser !== null;
     const navigate = useNavigate();
-    const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState<string>('');
     var expansionBreakpoint:''|'-sm'|'-md'|'-lg'|'-xl';
     if(!expansionBreakpoint) expansionBreakpoint = !on ? '' : '-md';
 
@@ -34,8 +34,13 @@ export default function Navbar(){
                             </Link>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-1" type="search" placeholder="Search" aria-label="Search"/>
+                    <form className="d-flex" role="search" onSubmit={e => {
+                        e.preventDefault();
+                        navigate(`/searchResults/${encodeURI(searchText)}/1`)
+                    }}>
+                        <input className="form-control me-1" type="search" placeholder="Search" aria-label="Search" value={searchText} onChange={e => 
+                            setSearchText(e.target.value)
+                        }/>
                         <button className="btn btn-outline-success me-lg-3" type="submit">Search</button>
                     </form>
                     <div className="navbar-nav">

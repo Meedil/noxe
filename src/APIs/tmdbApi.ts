@@ -22,5 +22,5 @@ export function getCredits(type:'movie'|'tv', id:number){
 }
 
 export function getSearchResults(text:string, page:number){
-    return fetch(`https://api.themoviedb.org/3/search/multi?api_key=${myKey}&language=en-US&page=${page}&include_adult=false&query=${text}`)
+    return fetch(`https://api.themoviedb.org/3/search/multi?api_key=${myKey}&language=en-US&page=${page}&query=${text}&include_adult=false`)
 }
