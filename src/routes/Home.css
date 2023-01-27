@@ -1,27 +1,27 @@
-.row-heading h2{
-    width: 50%;
+.row-heading h2 {
+  width: 50%;
 }
 
-.carousel-caption{
-    display: block !important;;
+.carousel-caption {
+  display: block !important;
 }
 
-.carousel-caption h5{
-    font-size: clamp(16px,3.5vw,40px);
+.carousel-caption h5 {
+  font-size: clamp(16px, 3.5vw, 40px);
 }
 
-.carousel-inner{
-    width: 75%;
+.carousel-inner {
+  width: 75%;
 }
 @media screen and (max-width: 768px) {
-    .carousel-inner{
-        width: 100%
-    }
-    .carousel-caption{
-        /* padding: 5px; */
-    }
+  .carousel-inner {
+    width: 100%;
+  }
+  .carousel-caption {
+    /* padding: 5px; */
+  }
 }
 
-.dark-bottom{
-    box-shadow: 0 -70px 100px 10px black inset;
+.dark-bottom {
+  box-shadow: 0 -70px 100px 10px black inset;
 }

@@ -1,30 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500&display=swap");
 
-*{
-    color: #fff;
-    font-family: "Montserrat Alternates", sans-serif;
-    font-weight: 300;
-    --text-grey:#6c757d;
+* {
+  color: #fff;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 300;
+  --text-grey: #6c757d;
 }
-/* .row{
-    max-width: 100%;
-} */
-.nav-item{
-    font-size: 16px;
+.nav-item {
+  font-size: 16px;
 }
-.subtext{
-    color: var(--text-grey) !important;
+.subtext {
+  color: var(--text-grey) !important;
 }
-.disabled{
-    cursor:no-drop;
-    pointer-events: none;
-    color: var(--text-grey);
+.disabled {
+  cursor: no-drop;
+  pointer-events: none;
+  color: var(--text-grey);
 }
-a{
-    color: white;
+a {
+  color: white;
 }
-.login-message{
-    text-align: center; 
-    font-family: Roboto, 'arial';
-    color: #dadada !important;
+.login-message {
+  text-align: center;
+  font-family: Roboto, "arial";
+  color: #dadada !important;
 }
